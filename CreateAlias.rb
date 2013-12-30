@@ -16,12 +16,21 @@ end
 # total_episodes = 0                                       #Variable to store total episodes(Only used for final output)
 # name = []
 
-Dir.glob(path + "*") do |f|
-  complete = f.match(/[sS]\d+[eE]\d+/)
+Dir.glob(path + "*") do |folder|
+  complete = folder.match(/[sS]\d+[eE]\d+/)
   if complete
-    season = complete.to_s.match(/[sS]\d+/)
-    season = season.to_s[1..-1]
-    episode = complete.to_s.match(/[eE]\d+/)
-    puts season, episode
+
+    episode = folder.split('/')
+    season = episode[-1].to_s.match(/[sS]\d+/).to_s[1..-1]
+    dir_name = "Season #{season}"
+
+    Dir.mkdir(dir_name) unless File.exists?(dir_name)
+
+    Dir.glob(folder + '/*') do |file|
+
+      part = file.split('/')
+
+      File.symlink(file, dir_name + '/' + part[-1])
+    end
   end
 end
