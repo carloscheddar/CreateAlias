@@ -13,7 +13,7 @@ if not ARGV[0]
   print "Drag the target folder to the terminal window: "
 
   # Strip the '\' to work with change dir
-  target = gets.chomp(" \n").gsub(/\\/, "")
+  target = gets.chomp(" \n").delete "\\"
 
 # Get arguments from command line
 else
