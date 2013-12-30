@@ -7,21 +7,24 @@
 if not ARGV[0]
   print "Drag the show folder to the terminal window: "    #Get folder from user
   path = gets.chomp(" \n") + "/"
+  print "Drag the target folder to the terminal window: "
+  target = gets.chomp(" \n").gsub(/\\/, "")
 else
   path = ARGV[0].chomp(" \n") + "/"
+  target = ARGV[1]
 end
 
-# show = File.basename(path).delete "\\"                   #Delete the backlashes that generate with spaces
-# total_seasons = 0                                        #Variable to store total seasons(Only used for final output)
-# total_episodes = 0                                       #Variable to store total episodes(Only used for final output)
-# name = []
+# Change the directory to the one specified by the user
+Dir.chdir(target)
 
 Dir.glob(path + "*") do |folder|
   complete = folder.match(/[sS]\d+[eE]\d+/)
   if complete
-
     episode = folder.split('/')
     season = episode[-1].to_s.match(/[sS]\d+/).to_s[1..-1]
+
+    puts "Creating alias for #{episode[-1]}"
+
     dir_name = "Season #{season}"
 
     Dir.mkdir(dir_name) unless File.exists?(dir_name)
@@ -34,3 +37,5 @@ Dir.glob(path + "*") do |folder|
     end
   end
 end
+
+puts "Finished alias creation please check folder on:", "#{target}"
