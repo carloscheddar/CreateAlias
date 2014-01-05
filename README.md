@@ -36,6 +36,13 @@ Created aliases will be on a folder specified by the user:
        Doctor Who - S01E01 (001) - An Unearthly Child (2) - The Cave of Skulls
        Doctor Who - S01E01 (001) - An Unearthly Child (3) - The Forest of Fear
        Doctor Who - S01E01 (001) - An Unearthly Child (4) - The Firemaker
+       Doctor Who - S01E02 (002) - The Daleks (1) - The Dead Planet
+       Doctor Who - S01E02 (002) - The Daleks (2) - The Survivors
+       Doctor Who - S01E02 (002) - The Daleks (3) - The Escape
+       Doctor Who - S01E02 (002) - The Daleks (4) - The Ambush
+       Doctor Who - S01E02 (002) - The Daleks (5) - The Expedition
+       Doctor Who - S01E02 (002) - The Daleks (6) - The Ordeal
+       Doctor Who - S01E02 (002) - The Daleks (7) - The Rescue
     /Season 02
        Doctor Who - S02E01 (009) - Planet of Giants (1) - Planet of Giants
        Doctor Who - S02E01 (009) - Planet of Giants (2) - Dangerous Journey
